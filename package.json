@@ -1,0 +1,88 @@
+{
+  "name": "advanced-github-notifier",
+  "version": "1.5.0",
+  "description": "A Firefox extension, that not only shows a count of notifications, but also shows notification popups and has a popup that gives direct access to the notifications.",
+  "main": "manifest.json",
+  "scripts": {
+    "lint:js": "eslint scripts/ test/ manifest.json --ext js,json",
+    "lint:css": "stylelint \"styles/*.css\"",
+    "lint:webext": "web-ext lint",
+    "lint:ec": "eclint check $(git ls-files)",
+    "lint": "npm run lint:js && npm run lint:css && npm run lint:ec && npm run lint:webext",
+    "test:js": "nyc ava",
+    "test": "npm run lint && npm run test:js",
+    "start": "web-ext run",
+    "build": "tx pull && web-ext build",
+    "coverage": "nyc report && codecov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freaktechnik/advanced-github-notifier.git"
+  },
+  "author": "Martin Giger",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/freaktechnik/advanced-github-notifier/issues"
+  },
+  "files": [
+    "scripts/*",
+    "styles/*",
+    "images/*",
+    "manifest.json",
+    "*.html"
+  ],
+  "homepage": "https://github.com/freaktechnik/advanced-github-notifier#readme",
+  "devDependencies": {
+    "@freaktechnik/eslint-config-base": "^6.6.2",
+    "@freaktechnik/eslint-config-extension": "^6.6.3",
+    "@freaktechnik/eslint-config-test": "^6.6.2",
+    "ava": "^1.2.1",
+    "codecov": "^3.2.0",
+    "eclint": "^2.8.1",
+    "eslint": "^5.15.0",
+    "jsdom": "^14.0.0",
+    "mkdirp": "^0.5.1",
+    "nyc": "^13.3.0",
+    "sinon-chrome": "^2.3.2",
+    "stylelint": "^9.10.1",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-no-unsupported-browser-features": "^3.0.2",
+    "web-ext": "^3.0.0"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard",
+    "plugins": [
+      "stylelint-no-unsupported-browser-features"
+    ],
+    "rules": {
+      "indentation": 4,
+      "color-named": "always-where-possible",
+      "plugin/no-unsupported-browser-features": true
+    }
+  },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text"
+    ]
+  },
+  "engines": {
+    "node": ">= 8.0.0"
+  },
+  "private": true,
+  "browserslist": [
+    "last 1 Firefox versions",
+    "last 1 FirefoxAndroid versions"
+  ],
+  "webExt": {
+    "ignoreFiles": [
+      "test",
+      "coverage",
+      "package*.json",
+      "node_modules",
+      ".*",
+      "web-ext-artifacts",
+      "*.md"
+    ]
+  }
+}

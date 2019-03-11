@@ -1,0 +1,57 @@
+#active {
+    padding: 0;
+    margin: 0;
+}
+
+#active li {
+    padding: 0.5em 0.5em 0.5em 0;
+    margin: 0;
+    clear: both;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+#active li div:first-child {
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+#active li .browser-style {
+    margin: 0;
+}
+
+#active li .browser-style input {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#active li small {
+    margin-left: 0.5em;
+}
+
+#active li:nth-child(2n) {
+    background: lightgrey;
+}
+
+.account-controls {
+    float: right;
+}
+
+section {
+    padding: 1em 0;
+}
+
+section + section {
+    border-top: 1px solid #d7d7db;
+}
+
+#error img {
+    height: 1em;
+    width: 1em;
+}
+
+#active label.disabled {
+    opacity: 0.8;
+    cursor: not-allowed; /* stylelint-disable-line plugin/no-unsupported-browser-features */
+}

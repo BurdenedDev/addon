@@ -1,0 +1,32 @@
+/*
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/.
+ */
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+select {
+    width: 100%;
+}
+
+.text-shortcut {
+    margin-left: 4px;
+}
+
+.icon {
+    margin-right: 4px;
+    height: 1.2em;
+    width: 1.2em;
+}
+
+button.panel-section-footer-button {
+    padding: 12px;
+    border: none;
+    margin: 0;
+    box-shadow: none;
+    background-color: none;
+}
